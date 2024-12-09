@@ -1,0 +1,238 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed; /* Faz com que a imagem fique fixa ao rolar a página */
+}
+
+
+/* Navbar preta */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: relative; /* Adiciona posicionamento relativo para controlarmos melhor os elementos */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    font-size: 17px;
+    color: #ccc;
+    display: flex; /* Alinha itens na direita da navbar */
+    align-items: center; /* Garante alinhamento vertical */
+}
+
+.navbar-right span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Botão do dropdown */
+#dropdown-btn {
+    width: 300px; /* Ajusta o tamanho do botão ao conteúdo */
+    padding: 10px 20px;
+    background-color: #66baff; /* Cinza claro */
+    color: #333; /* Texto escuro */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 20px; /* Adiciona margem para dar espaço ao lado direito */
+}
+
+#dropdown-btn:hover {
+    background-color: #bfbfbf;
+}
+
+/* Menu dropdown */
+#dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    max-height: 300px; /* Limita a altura */
+    overflow-y: auto; /* Habilita rolagem vertical */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#dropdown-content li {
+    padding: 10px;
+    text-align: left;
+}
+
+#dropdown-content li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+}
+
+#dropdown-content li:hover {
+    background-color: #ddd;
+}
+
+/* Exibe o dropdown quando ativo */
+.dropdown.active #dropdown-content {
+    display: block;
+}
+
+
+/* Container principal das colunas */
+#column-container {
+    display: flex; /* Exibe colunas lado a lado */
+    gap: 20px; /* Espaçamento entre as colunas */
+    padding: 20px;
+    background-color: transparent; /* Torna o fundo invisível */
+    overflow-x: auto; /* Permite rolagem horizontal, caso necessário */
+    margin-top: 20px; /* Distância do dropdown */
+}
+
+/* Estilo para cada coluna */
+.column {
+    background-color: rgba(224, 224, 224, 0.9); /* Fundo cinza claro com opacidade */
+    border: 1px solid #ccc; /* Borda cinza suave */
+    /*border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px;
+    width: 250px; /* Largura fixa */
+    min-height: 400px; /* Altura mínima */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    flex-shrink: 0; /* Impede que as colunas encolham */
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo será empilhado */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+
+/* Título da coluna */
+.column h3 {
+    font-size: 18px;
+    top: 10px;
+    color: #333; /* Texto escuro */
+}
+
+/* Container de tasks */
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none; /* Remove os pontos da lista */
+    width:90%; /* Faz com que as tasks ocupem a largura total da coluna */
+    align-items: left; /* Centraliza as tasks horizontalmente */
+}
+
+/* Estilo para cada task */
+.task {
+    background-color: #6e7174; /* Azul para contraste */
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%; /* Limita a largura das tasks para que não fiquem muito largas */
+}
+
+.task span {
+    display: flex;
+}
+
+
+/* Wrapper do container de colunas */
+#column-container-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o botão "Nova Coluna" */
+#add-column-btn {
+    width: 280px;
+    min-height: 150px;
+    background-color: rgba(224, 224, 224, 0.9); /* Fundo cinza claro com opacidade */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    color: #462323;
+    text-align: center;
+    position: relative; /* Para posicionar o formulário */
+    margin-left: 20px;
+}
+
+#add-column-btn:hover {
+    background-color: #dcdcdc;
+}
+
+/* Estilo para o formulário de nova coluna */
+.column-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3%;
+    padding: 10px;
+    background-color: rgba(224, 224, 224, 0.9); /* Fundo cinza claro com opacidade */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Posiciona dentro do botão */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%);
+    z-index: 20;
+    display: none; /* Oculto por padrão */
+}
+
+#new-column-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(224, 224, 224, 0.9); /* Fundo cinza claro com opacidade */
+
+}
+
+#new-column-form button {
+    margin-top: 5px;
+    padding: 5px 10px;
+}
+
+#toggle-dark-mode {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#toggle-dark-mode:hover {
+    background-color: #555;
+}
+
+

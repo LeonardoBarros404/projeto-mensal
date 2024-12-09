@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board</title>
+    <link rel="stylesheet" href="/styles/taskBoard.css">
+</head>
+<body>
+    <!-- Navbar preta -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button id="dropdown-btn">Clique</button>
+            <ul id="dropdown-content"></ul>
+        </div>
+        <!-- Adicione no navbar -->
+     <div class="navbar-right">
+        <button id="toggle-dark-mode">Modo Noturno</button>
+        <span id="user-email"></span> <!-- Exibe o email -->
+        <p> | </p>
+        <a href="telaLogin.html"><button id="quitButton">Logout</button></a>
+     </div>
+
+    </nav>
+    
+
+    <div id="column-container">
+        <!-- As colunas e tasks serão adicionadas aqui dinamicamente -->
+
+    </div>
+    
+
+    <script type="module" src="/scripts/pages/taskBoard.js"></script>
+</body>
+</html>
